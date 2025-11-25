@@ -1,4 +1,4 @@
-﻿using StupidTemplate.Classes;
+using StupidTemplate.Classes;
 using StupidTemplate.Mods;
 using static StupidTemplate.Menu.Main;
 using static StupidTemplate.Settings;
@@ -26,7 +26,8 @@ namespace StupidTemplate.Menu
 
                 new ButtonInfo { buttonText = "Room Mods", method =() => currentCategory = 4, isTogglable = false, toolTip = "Opens the room mods tab."},
                 new ButtonInfo { buttonText = "Movement Mods", method =() => currentCategory = 5, isTogglable = false, toolTip = "Opens the movement mods tab."},
-                new ButtonInfo { buttonText = "Safety Mods", method =() => currentCategory = 6, isTogglable = false, toolTip = "Opens the safety mods tab."},
+                 new ButtonInfo { buttonText = "Advantages Mods", method =() => currentCategory = 6, isTogglable = false, toolTip = "Opens the movement mods tab."},
+                new ButtonInfo { buttonText = "Safety Mods", method =() => currentCategory = 7, isTogglable = false, toolTip = "Opens the safety mods tab."},
             },
 
             new ButtonInfo[] { // Settings [1]
@@ -47,6 +48,7 @@ namespace StupidTemplate.Menu
                 new ButtonInfo { buttonText = "Return to Settings", method =() => currentCategory = 1, isTogglable = false, toolTip = "Returns to the main settings page for the menu."},
 
                 new ButtonInfo { buttonText = "Change Fly Speed", overlapText = "Change Fly Speed [Normal]", method =() => Mods.Settings.Movement.ChangeFlySpeed(), isTogglable = false, toolTip = "Changes the speed of the fly mod."},
+                 new ButtonInfo { buttonText = "WASD fly", method =() => Movement.WASDFLY(), isTogglable = true, toolTip = "Changes the speed of the fly mod."},
             },
 
             new ButtonInfo[] { // Room Mods [4]
@@ -63,7 +65,13 @@ namespace StupidTemplate.Menu
                 new ButtonInfo { buttonText = "Teleport Gun", method =() => Movement.TeleportGun(), toolTip = "Teleports you to wherever your pointer is when pressing trigger."},
             },
 
-            new ButtonInfo[] { // Safety Mods [6]
+            new ButtonInfo[] { // Advantages Mods [6]
+                new ButtonInfo { buttonText = "Return to Main", method =() => currentCategory = 0, isTogglable = false, toolTip = "Returns to the main page of the menu."},
+
+                new ButtonInfo { buttonText = "Ghost Monkie", method =() => Advantages.GhostMonkie(), disableMethod =() => GorillaTagger.Instance.offlineVRRig.enabled = true, toolTip = "boo, it makes your rig freeze"},
+            },
+
+            new ButtonInfo[] { // Safety Mods [7]
                 new ButtonInfo { buttonText = "Return to Main", method =() => currentCategory = 0, isTogglable = false, toolTip = "Returns to the main page of the menu."},
 
                 new ButtonInfo { buttonText = "Anti Report", method =() => Safety.AntiReportDisconnect(), toolTip = "Disconnects you when someone tries to report you."},
