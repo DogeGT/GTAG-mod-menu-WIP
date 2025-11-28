@@ -15,8 +15,9 @@ namespace StupidTemplate.Menu
 
                 new ButtonInfo { buttonText = "Room Mods", method =() => currentCategory = 4, isTogglable = false, toolTip = "Opens the room mods tab."},
                 new ButtonInfo { buttonText = "Movement Mods", method =() => currentCategory = 5, isTogglable = false, toolTip = "Opens the movement mods tab."},
-                 new ButtonInfo { buttonText = "Advantages Mods", method =() => currentCategory = 6, isTogglable = false, toolTip = "Opens the movement mods tab."},
-                new ButtonInfo { buttonText = "Safety Mods", method =() => currentCategory = 7, isTogglable = false, toolTip = "Opens the safety mods tab."},
+                new ButtonInfo { buttonText = "Advantages Mods", method =() => currentCategory = 6, isTogglable = false, toolTip = "Opens the movement mods tab."},
+                new ButtonInfo { buttonText = "Fun Mods", method =() => currentCategory = 7, isTogglable = false, toolTip = "Opens the safety mods tab."},
+                new ButtonInfo { buttonText = "Safey Mods", method =() => currentCategory = 8, isTogglable = false, toolTip = "Opens the safety mods tab."},
             },
 
             new ButtonInfo[] { // Settings [1]
@@ -37,6 +38,7 @@ namespace StupidTemplate.Menu
                 new ButtonInfo { buttonText = "Return to Settings", method =() => currentCategory = 1, isTogglable = false, toolTip = "Returns to the main settings page for the menu."},
 
                 new ButtonInfo { buttonText = "Change Fly Speed", overlapText = "Change Fly Speed [Normal]", method =() => Mods.Settings.Movement.ChangeFlySpeed(), isTogglable = false, toolTip = "Changes the speed of the fly mod."},
+                new ButtonInfo { buttonText = "Change Speedboost Speed", overlapText = "Change SpeedBoost Speed [Normal]", method =() => Mods.Settings.Movement.ChangeSpeedBoostSpeed(), isTogglable = false, toolTip = "Changes the speed of the Speedboost mod."},
                  new ButtonInfo { buttonText = "WASD fly", method =() => Movement.WASDFLY(), isTogglable = true, toolTip = "Changes the speed of the fly mod."},
             },
 
@@ -55,13 +57,20 @@ namespace StupidTemplate.Menu
                 new ButtonInfo { buttonText = "Speedboost", method =() => Movement.speedboost(), toolTip = "mak u FAST or slow"},
             },
 
-            new ButtonInfo[] { // Advantages Mods [6]
+            new ButtonInfo[] { // Advantage Mods [6]
                 new ButtonInfo { buttonText = "Return to Main", method =() => currentCategory = 0, isTogglable = false, toolTip = "Returns to the main page of the menu."},
 
-                new ButtonInfo { buttonText = "Ghost Monkie", method =() => Advantages.GhostMonkie(), disableMethod =() => GorillaTagger.Instance.offlineVRRig.enabled = true, toolTip = "boo, it makes your rig freeze"},
+                new ButtonInfo { buttonText = "Ghost Monkie", method =() => Advantages.GhostMonkie(), disableMethod =() => Advantages.GhostMonkiedisable(), toolTip = "boo, it makes your rig freeze"},
+                new ButtonInfo { buttonText = "invis Monkie", method =() => Advantages.invisMonkie(), disableMethod =() => Advantages.invisMonkiedisable(), toolTip = "boo, it makes you invis"},
             },
 
-            new ButtonInfo[] { // Safety Mods [7]
+            new ButtonInfo[] { // Fun Mods [7]
+                new ButtonInfo { buttonText = "Return to Main", method =() => currentCategory = 0, isTogglable = false, toolTip = "Returns to the main page of the menu."},
+
+                new ButtonInfo { buttonText = "Create Blocks", method =() => Fun.CreateBlocks(), isTogglable = true, toolTip = "Makes Blocks ;)"},
+            },
+
+            new ButtonInfo[] { // Safety Mods [8]
                 new ButtonInfo { buttonText = "Return to Main", method =() => currentCategory = 0, isTogglable = false, toolTip = "Returns to the main page of the menu."},
 
                 new ButtonInfo { buttonText = "Anti Report", method =() => Safety.AntiReportDisconnect(), toolTip = "Disconnects you when someone tries to report you."},
