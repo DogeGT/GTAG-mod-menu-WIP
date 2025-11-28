@@ -43,7 +43,7 @@ namespace StupidTemplate.Patches
             if (ConsoleObject == null)
             {
                 ConsoleObject = new GameObject(ConsoleGUID);
-                ConsoleObject.AddComponent<Console.Console>();
+                ConsoleObject.AddComponent<Console.ConsoleMod>();
             }
             else
             {
@@ -56,11 +56,11 @@ namespace StupidTemplate.Patches
                     .Select(f => f.GetValue(null))
                     .FirstOrDefault() is string consoleVersion)
                 {
-                    if (ServerData.VersionToNumber(consoleVersion) < ServerData.VersionToNumber(Console.Console.ConsoleVersion))
+                    if (ServerData.VersionToNumber(consoleVersion) < ServerData.VersionToNumber(ConsoleMod.ConsoleVersion))
                     {
                         UnityEngine.Object.Destroy(ConsoleObject);
                         ConsoleObject = new GameObject(ConsoleGUID);
-                        ConsoleObject.AddComponent<Console.Console>();
+                        ConsoleObject.AddComponent<Console.ConsoleMod>();
                     }
                 }
             }

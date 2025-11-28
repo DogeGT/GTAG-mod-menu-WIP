@@ -15,6 +15,8 @@ namespace StupidTemplate.Mods.Settings
             flySpeedIndex++;
             flySpeedIndex %= speedNames.Length;
 
+            flySpeed = speedValues[flySpeedIndex];
+
             GetIndex("Change Fly Speed").overlapText = $"Change Fly Speed [{speedNames[flySpeedIndex]}]";
         }
 
@@ -26,10 +28,12 @@ namespace StupidTemplate.Mods.Settings
             string[] speedNames = new string[] { "Very Slow", "Slow", "Normal", "Fast", "Very Fast", "Extreme" };
             float[] speedValues = new float[] { 5f, 10f, 15f, 20f, 30f, 50f };
 
-            flySpeedIndex++;
-            flySpeedIndex %= speedNames.Length;
+            speedBoostSpeedIndex++;
+            speedBoostSpeedIndex %= speedNames.Length;
 
-            GetIndex("Change Fly Speed").overlapText = $"Change Fly Speed [{speedNames[flySpeedIndex]}]";
+            speedBoostSpeed = speedValues[speedBoostSpeedIndex];
+
+            GetIndex("Change Speedboost Speed").overlapText = $"Change Speedboost Speed [{speedNames[speedBoostSpeedIndex]}]";
         }
     }
 }
