@@ -48,5 +48,21 @@ namespace StupidTemplate.Mods
                 NotifiLib.SendNotification("<color=grey>[</color><color=purple>ANTI-REPORT</color><color=grey>]</color> " + GetPlayerFromVRRig(vrrig).NickName + " attempted to report you, you have been disconnected.");
             });
         }
+
+        public static void fingermovement()
+        {
+            ControllerInputPoller.instance.leftControllerGripFloat = 0f;
+            ControllerInputPoller.instance.rightControllerGripFloat = 0f;
+            ControllerInputPoller.instance.leftControllerIndexFloat = 0f;
+            ControllerInputPoller.instance.rightControllerIndexFloat = 0f;
+            ControllerInputPoller.instance.leftControllerPrimaryButton = false;
+            ControllerInputPoller.instance.leftControllerSecondaryButton = false;
+            ControllerInputPoller.instance.rightControllerPrimaryButton = false;
+            ControllerInputPoller.instance.rightControllerSecondaryButton = false;
+            ControllerInputPoller.instance.leftControllerPrimaryButtonTouch = false;
+            ControllerInputPoller.instance.leftControllerSecondaryButtonTouch = false;
+            ControllerInputPoller.instance.rightControllerPrimaryButtonTouch = false;
+            ControllerInputPoller.instance.rightControllerSecondaryButtonTouch = false;
+        }
     }
 }

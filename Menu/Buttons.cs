@@ -54,6 +54,7 @@ namespace StupidTemplate.Menu
                 new ButtonInfo { buttonText = "Platforms", method =() => Movement.Platforms(), toolTip = "Spawns platforms on your hands when pressing grip."},
                 new ButtonInfo { buttonText = "Fly", method =() => Movement.Fly(), toolTip = "Sends you forward when holding A."},
                 new ButtonInfo { buttonText = "Teleport Gun", method =() => Movement.TeleportGun(), toolTip = "Teleports you to wherever your pointer is when pressing trigger."},
+                new ButtonInfo { buttonText = "Noclip", method =() => Movement.NoclipMod(), toolTip = "Noclip, duh." },
                 new ButtonInfo { buttonText = "Speedboost", method =() => Movement.speedboost(), toolTip = "mak u FAST or slow"},
             },
 
@@ -61,7 +62,7 @@ namespace StupidTemplate.Menu
                 new ButtonInfo { buttonText = "Return to Main", method =() => currentCategory = 0, isTogglable = false, toolTip = "Returns to the main page of the menu."},
 
                 new ButtonInfo { buttonText = "Ghost Monkie", method =() => Advantages.GhostMonkie(), disableMethod =() => Advantages.GhostMonkiedisable(), toolTip = "boo, it makes your rig freeze"},
-                new ButtonInfo { buttonText = "invis Monkie", method =() => Advantages.invisMonkie(), disableMethod =() => Advantages.invisMonkiedisable(), toolTip = "boo, it makes you invis"},
+                new ButtonInfo { buttonText = "invis Monkie", method =() => Advantages.InvisMonkie(), disableMethod =() => Advantages.InvisMonkiedisable(), toolTip = "boo, it makes you invis"},
             },
 
             new ButtonInfo[] { // Fun Mods [7]
@@ -74,6 +75,7 @@ namespace StupidTemplate.Menu
                 new ButtonInfo { buttonText = "Return to Main", method =() => currentCategory = 0, isTogglable = false, toolTip = "Returns to the main page of the menu."},
 
                 new ButtonInfo { buttonText = "Anti Report", method =() => Safety.AntiReportDisconnect(), toolTip = "Disconnects you when someone tries to report you."},
+                new ButtonInfo { buttonText = "No Finger Movement", method =() => Safety.fingermovement(), toolTip = "No Finger Movement"},
             },
         };
     }

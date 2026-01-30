@@ -157,5 +157,16 @@ namespace StupidTemplate.Mods
             GorillaLocomotion.GTPlayer.Instance.jumpMultiplier = speedBoostSpeed;
             GorillaLocomotion.GTPlayer.Instance.maxJumpSpeed = speedBoostSpeed;
         }
+
+        public static void NoclipMod()
+        {
+            bool disablecolliders = ControllerInputPoller.instance.rightControllerIndexFloat > 0.1f;
+            MeshCollider[] colliders = Resources.FindObjectsOfTypeAll<MeshCollider>();
+
+            foreach (MeshCollider collider in colliders)
+            {
+                collider.enabled = !disablecolliders;
+            }
+        }
     }
 }
